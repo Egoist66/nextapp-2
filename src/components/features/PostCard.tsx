@@ -15,7 +15,7 @@ export default function PostCard({
 }: PostProps) {
   return (
 
-    <Link href={`/blog/${id}`}>
+    <Link className="hover:shadow-lg" href={`/blog/${id}`}>
       <article className="bg-white rounded-lg shadow-lg post-card p-4 mx-auto">
         <h1 className="text-4xl font-bold mb-2">{title}</h1>
         {/* <img src={""} className="w-full h-64 object-cover" alt={title} /> */}

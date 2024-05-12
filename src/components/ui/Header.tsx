@@ -16,7 +16,7 @@ export default function Header() {
 
     return (
         <header className="bg-slate-700 p-3 shadow-2xl sticky top-0">
-           <div className="container px-5">
+           <div className="container mx-auto px-5">
                 <nav className="flex">
                     <ul className="flex gap-8 flex-wrap">
                         {routes.map((route) => (
