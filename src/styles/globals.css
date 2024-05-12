@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+header a {
+  @apply text-white;
+}
+
+html,body {
+  @apply bg-yellow-50;
+  @apply h-full;
+
+}
+
+header a.active {
+  @apply font-bold;
+  @apply transition-all;
+}
+
+.post-card {
+  width: 450px;
+  margin: 0;
+}
