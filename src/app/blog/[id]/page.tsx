@@ -23,6 +23,7 @@ export default async function Post({ params }: { params: { id: string } }) {
     return <div>Post not found</div>;
   }
 
+
   return (
     <article className="bg-white rounded-lg shadow-lg p-4 mx-auto">
       <h1 className="text-4xl font-bold mb-2">{post?.title}</h1>
@@ -41,3 +42,20 @@ export default async function Post({ params }: { params: { id: string } }) {
     </article>
   );
 }
+
+
+// 'use server'
+ 
+// import { redirect } from 'next/navigation'
+// import { revalidatePath } from 'next/cache'
+ 
+// export async function createPost(id: string) {
+//   try {
+//     // Call database
+//   } catch (error) {
+//     // Handle errors
+//   }
+ 
+//   revalidatePath('/posts') // Update cached posts
+//   redirect(`/post/${id}`) // Navigate to the new post page
+// }
