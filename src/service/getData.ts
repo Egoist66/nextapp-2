@@ -1,3 +1,4 @@
+import { writeFile } from "fs";
 import mysql2 from "mysql2/promise";
 
 export const dbConnect = async (): Promise<mysql2.Connection> => {
@@ -18,6 +19,9 @@ export const getData = async () => {
     try {
         const shoes = (await dbConnect()).query("SELECT * FROM shoes");
         (await dbConnect()).end();
+
+      
+          
 
         return await shoes
     
