@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
 export const revalidate = 60;
 
-export async function generateStaticParams(): Promise<any> {
+export async function generateStaticParams(): Promise<Array<{slug: string}>> {
   const posts = await getPosts();
   return posts?.map((post) => ({
     slug: post.id.toString(),
@@ -18,6 +18,9 @@ export async function generateStaticParams(): Promise<any> {
 
 export default async function Post({ params }: { params: { id: string } }) {
   const post = await getPost(Number(params.id));
+
+ 
+
 
   if (!post) {
     return (

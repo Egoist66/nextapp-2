@@ -13,6 +13,7 @@ export const revalidate = 60;
 export default async function Blog() {
   const posts: Post[] = await getPosts();
 
+
   if (!posts.length) {
     return <div>Posts not found</div>;
   }

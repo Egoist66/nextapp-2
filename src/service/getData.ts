@@ -1,32 +1,33 @@
-import { writeFile } from "fs";
-import mysql2 from "mysql2/promise";
+import { dbConnect } from "@/utils/db";
 
-export const dbConnect = async (): Promise<mysql2.Connection> => {
-    const connection = await mysql2.createConnection({
-        host: "localhost", //127.0.0.1
-        user: "root",
-        password: "",
-        database: "products",
-    })
-
-    return connection;
-}
-
-
-type Shoes = Array<{ id: number, name: string, description: string }>
+type Shoes = Array<{ id: number; name: string; description: string }>;
 
 export const getData = async () => {
-    try {
-        const shoes = (await dbConnect()).query("SELECT * FROM shoes");
-        (await dbConnect()).end();
+  try {
+    const shoes = (await dbConnect()).query("SELECT * FROM shoes");
+    (await dbConnect()).end();
 
-      
-          
+    return await shoes;
+  } catch (error: any) {
+    console.clear();
+    console.log(error.message);
 
-        return await shoes
-    
-    }
-    catch (error) {
-        console.log(error);
-    }
-}
+    return [];
+  }
+};
+
+export const getProduct = async (id: number) => {
+  try {
+    const shoes = (await dbConnect()).query(
+      `SELECT * FROM shoes WHERE id = ${id}`
+    );
+    (await dbConnect()).end();
+
+    return await shoes;
+  } catch (error: any) {
+    console.clear();
+    console.log(error.message);
+
+    return [];
+  }
+};
