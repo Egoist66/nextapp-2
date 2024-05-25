@@ -22,8 +22,8 @@ export default function Header() {
                         {routes.map((route) => (
 
                             <li key={route.id}>
-                                <Link 
-                                    className={pathname === route.path ? 'active' : ''} 
+                                <Link
+                                    className={pathname === route.path ? 'active' : ''}
                                     href={route.path}>{route.name}
                                 </Link>
                             </li>
