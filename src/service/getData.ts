@@ -5,7 +5,7 @@ type Shoes = Array<{ id: number; name: string; description: string }>;
 export const getData = async () => {
   try {
     const shoes = (await dbConnect()).query("SELECT * FROM shoes");
-    (await dbConnect()).end();
+    await (await dbConnect()).end();
 
     return await shoes;
   } catch (error: any) {

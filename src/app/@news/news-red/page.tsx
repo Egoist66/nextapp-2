@@ -1,12 +1,11 @@
-export default function  Default(){
+export default function NewsRed(){
     return (
         <div style={{
-            background: 'black',
+            background: 'red',
             color: 'white',
             padding: 10,
             borderRadius: 10,
             marginBottom: '2rem'
-        }}>News</div>
+        }}>News Red</div>
     )
-
 }

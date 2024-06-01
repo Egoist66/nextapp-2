@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "../styles/globals.scss";
 import Header from "@/components/ui/Header";
+import {Auth} from "@/components/features/Auth";
 
 const inter = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
@@ -28,7 +29,11 @@ export default function RootLayout({
         <Header />
         
         <main className="p-4">
-          {news}
+          <Auth news={news}>
+            <div className="container mx-auto px-5">
+              Hello you are not auth
+            </div>
+          </Auth>
           <div className="container mx-auto px-5">
 
             {children}
