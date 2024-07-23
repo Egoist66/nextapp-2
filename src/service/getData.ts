@@ -21,7 +21,7 @@ export const getProduct = async (id: number) => {
     const shoes = (await dbConnect()).query(
       `SELECT * FROM shoes WHERE id = ${id}`
     );
-    (await dbConnect()).end();
+    await (await dbConnect()).end();
 
     return await shoes;
   } catch (error: any) {

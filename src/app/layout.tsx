@@ -29,11 +29,7 @@ export default function RootLayout({
         <Header />
         
         <main className="p-4">
-          <Auth news={news}>
-            <div className="container mx-auto px-5">
-              Hello you are not auth
-            </div>
-          </Auth>
+         
           <div className="container mx-auto px-5">
 
             {children}

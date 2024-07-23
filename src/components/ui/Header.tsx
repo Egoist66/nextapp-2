@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 const routes = [
     {id: 1, name: 'Home', path: '/'},
     {id: 2, name: 'About', path: '/about'},
-    {id: 3, name: 'Profile', path: '/profile'},
     {id: 4, name: 'Blog', path: '/blog'},
 ] as const
 
